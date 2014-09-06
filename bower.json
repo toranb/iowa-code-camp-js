@@ -1,0 +1,11 @@
+{
+  "name": "the-bower-configuration",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "1.9.1",
+    "handlebars": "1.3.0",
+    "ember": "1.7.0",
+    "ember-loader": "*",
+    "jquery-mockjax": "*"
+  }
+}
