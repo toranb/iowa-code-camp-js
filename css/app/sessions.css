@@ -1,0 +1,20 @@
+/*
+Styles for the 'Sessions' View
+*/
+
+.session-row {
+
+}
+
+.session-name {
+
+}
+
+.session-link a {
+    border-color: #333333;
+    background-color: #7F8400;
+}
+
+.no-sessions-found {
+
+}

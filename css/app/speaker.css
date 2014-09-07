@@ -1,8 +1,24 @@
 /*
-Styles specific to 'Speakers' View
+Styles specific to 'Speaker' View
 */
 
-.btn-speaker {
+.speaker-name {
+
+}
+
+.speaker-session-row {
+
+}
+
+.speaker-session-name {
+
+}
+
+.speaker-session-link a {
     background-color: #B96D00;
     border-color: #333333;
+}
+
+.no-sessions-found {
+
 }

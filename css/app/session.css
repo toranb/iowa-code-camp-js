@@ -2,7 +2,27 @@
 Styles for the 'Sessions' View
 */
 
-.btn-session {
+.session-name {
+
+}
+
+.session-desc {
+
+}
+
+.session-speaker-row {
+
+}
+
+.session-speaker-name {
+
+}
+
+.session-speaker-link a {
     border-color: #333333;
     background-color: #7F8400;
+}
+
+.no-speakers-found {
+
 }
