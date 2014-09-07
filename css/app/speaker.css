@@ -1,24 +1,7 @@
 /*
 Styles specific to 'Speaker' View
 */
-
-.speaker-name {
-
-}
-
-.speaker-session-row {
-
-}
-
-.speaker-session-name {
-
-}
-
 .speaker-session-link a {
-    background-color: #B96D00;
-    border-color: #333333;
-}
-
-.no-sessions-found {
-
+  background-color: #B96D00;
+  border-color: #333333;
 }

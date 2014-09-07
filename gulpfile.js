@@ -7,6 +7,7 @@ var handlebars = require('gulp-ember-handlebars');
 var transpiler = require('gulp-es6-module-transpiler');
 var minifyCss = require('gulp-minify-css');
 var concatCss = require('gulp-concat-css');
+var less = require('gulp-less');
 
 var paths = {
     templates: [
@@ -90,6 +91,12 @@ gulp.task('jshint', function() {
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(jshint.reporter('fail'));
+});
+
+gulp.task('lessify', function() {
+    return gulp.src('css/app/**/*.less')
+    .pipe(less())
+    .pipe(gulp.dest('css/app'));
 });
 
 gulp.task('minify-css', function() {

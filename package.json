@@ -9,6 +9,7 @@
     "gulp-filter": "*",
     "gulp-jshint": "*",
     "gulp-karma": "*",
+    "gulp-less": "^1.3.5",
     "gulp-minify-css": "^0.3.8",
     "gulp-uglify": "*",
     "jshint-stylish": "*",
