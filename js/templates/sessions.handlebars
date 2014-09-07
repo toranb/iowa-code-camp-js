@@ -1,0 +1,17 @@
+    <table class="table">
+      <tbody>
+      {{#each session in controller}}
+      <tr class="session-row">
+        <td class="session-name">{{session.name}}</td>
+        <td class="session-link">
+          {{#link-to 'session' session.id class='btn btn-info'}}details{{/link-to}}</td>
+        </td>
+      </tr>
+      {{else}}
+      <tr class="no-sessions-found">
+        <td>no sessions found</td>
+        <td></td>
+      </tr>
+      {{/each}}
+      </tbody>
+    </table>

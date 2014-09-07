@@ -9,6 +9,7 @@
         "find",
         "triggerEvent",
         "startApp",
+        "lookup",
         "singleTest",
         "singleModule",
         "stubEndpointForHttpRequest",
