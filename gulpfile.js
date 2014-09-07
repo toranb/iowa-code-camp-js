@@ -6,6 +6,7 @@ var gulpFilter = require('gulp-filter');
 var handlebars = require('gulp-ember-handlebars');
 var transpiler = require('gulp-es6-module-transpiler');
 var minifyCss = require('gulp-minify-css');
+var concatCss = require('gulp-concat-css');
 
 var paths = {
     templates: [
@@ -94,6 +95,6 @@ gulp.task('jshint', function() {
 gulp.task('minify-css', function() {
     return gulp.src(paths.concatCss)
     .pipe(minifyCss({ keepBreaks: true }))
-    .pipe(concat('app.min.css'))
+    .pipe(concatCss('app.min.css'))
     .pipe(gulp.dest('css/dist/'));
 });
