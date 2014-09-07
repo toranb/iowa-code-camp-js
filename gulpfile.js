@@ -54,7 +54,6 @@ var filter = gulpFilter(function(file) {
 gulp.task('default', [
     'jshint', 
     'emberhandlebars', 
-    'lessify', 
     'minify-css'
 ], function(){
     return gulp.src(paths.concatDist)
@@ -104,7 +103,9 @@ gulp.task('lessify', function() {
     .pipe(gulp.dest('css/app'));
 });
 
-gulp.task('minify-css', function() {
+gulp.task('minify-css', [
+    'lessify'
+], function() {
     return gulp.src(paths.concatCss)
     .pipe(minifyCss({ keepBreaks: true }))
     .pipe(concatCss('app.min.css'))
