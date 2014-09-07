@@ -5,6 +5,7 @@ var concat = require('gulp-concat');
 var gulpFilter = require('gulp-filter');
 var handlebars = require('gulp-ember-handlebars');
 var transpiler = require('gulp-es6-module-transpiler');
+var minifyCss = require('gulp-minify-css');
 
 var paths = {
     templates: [
@@ -35,6 +36,10 @@ var paths = {
         'js/app/**/*.js',
         'js/tests/**/*.js',
         'vendor/test-loader.js'
+    ],
+    concatCss: [
+        'js/vendor/bootstrap/dist/css/bootstrap.min.css',
+        'css/app/**/*.css'
     ]
 };
 
@@ -84,4 +89,11 @@ gulp.task('jshint', function() {
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(jshint.reporter('fail'));
+});
+
+gulp.task('minify-css', function() {
+    return gulp.src(paths.concatCss)
+    .pipe(minifyCss({ keepBreaks: true }))
+    .pipe(concat('app.min.css'))
+    .pipe(gulp.dest('css/dist/'));
 });
