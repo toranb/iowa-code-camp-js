@@ -51,7 +51,12 @@ var filter = gulpFilter(function(file) {
   return vendor && templates;
 });
 
-gulp.task('default', ['jshint', 'emberhandlebars'], function(){
+gulp.task('default', [
+    'jshint', 
+    'emberhandlebars', 
+    'lessify', 
+    'minify-css'
+], function(){
     return gulp.src(paths.concatDist)
         .pipe(filter)
         .pipe(transpiler({
