@@ -2,8 +2,8 @@ var App, store;
 
 module("speaker integration tests", {
     setup: function() {
-        var first = {session: "foo", desc: "first one", speaker: {name: "toran"}};
-        var last = {session: "bar", desc: "last one", speaker: {name: "nick"}};
+        var first = {session: "foo", desc: "first one", time: "9:00 AM - 10:15 AM", room: "Room A", speaker: {name: "toran"}};
+        var last = {session: "bar", desc: "last one", time: "10:30 AM - 11:45 AM", room: "Room B", speaker: {name: "nick"}};
         stubEndpointForHttpRequest("http://iowacodecamp.com/data/json", [first, last]);
         App = startApp();
         store = lookup("store:main");
