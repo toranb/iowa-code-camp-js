@@ -2,8 +2,8 @@ var App, store;
 
 module("speaker integration tests", {
     setup: function() {
-        var first = {session: "foo", desc: "first one", time: "9:00 AM - 10:15 AM", room: "Room A", speaker: {name: "toran"}};
-        var last = {session: "bar", desc: "last one", time: "10:30 AM - 11:45 AM", room: "Room B", speaker: {name: "nick"}};
+        var first = {session: "foo", level: 100, desc: "first one", time: "9:00 AM - 10:15 AM", room: "Room A", speaker: {name: "toran", bio: "javascript ninja"}};
+        var last = {session: "bar", level: 300, desc: "last one", time: "10:30 AM - 11:45 AM", room: "Room B", speaker: {name: "nick", bio: "rockstar hacker"}};
         stubEndpointForHttpRequest("http://iowacodecamp.com/data/json", [first, last]);
         App = startApp();
         store = lookup("store:main");
@@ -34,13 +34,15 @@ test("speakers route will show the list of available speakers", function() {
 });
 
 test("speaker details route will show the speaker details", function() {
-    expect(4);
+    expect(5);
     visit("/speakers");
     click(".speaker-link:eq(0) a");
     andThen(function() {
         var first_session = store.getEverything("session").toArray()[0];
         var speaker_name = find(".speaker-name");
         equal(speaker_name.text(), "toran");
+        var speaker_bio = find(".speaker-bio");
+        equal(speaker_bio.text(), "javascript ninja");
         var sessions = find(".speaker-session-row").length;
         equal(sessions, 1);
         var first_session_name = find(".speaker-session-name:eq(0)");

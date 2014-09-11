@@ -32,8 +32,8 @@ var initializer = {
             response.forEach(function(data) {
                 var session_id = Ember.uuid();
                 var speaker_id = Ember.uuid();
-                var session = {id: session_id, name: data.session, time: data.time, room: data.room, desc: data.desc, speaker: speaker_id};
-                var speaker = {id: speaker_id, name: data.speaker.name, session: session_id};
+                var session = {id: session_id, name: data.session, level: data.level, time: data.time, room: data.room, desc: data.desc, speaker: speaker_id};
+                var speaker = {id: speaker_id, name: data.speaker.name, bio: data.speaker.bio, session: session_id};
                 store.push("session", session);
                 store.push("speaker", speaker);
             });
