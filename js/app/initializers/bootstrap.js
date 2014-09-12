@@ -28,7 +28,7 @@ var initializer = {
     initialize: function(container, application) {
         application.deferReadiness();
         var store = container.lookup("store:main");
-        var days = xhr("http://iowacodecamp.com/data/json", "GET").then(function(response) {
+        var days = xhr("http://iowacodecamp.com/data.json", "GET").then(function(response) {
             response.d.data.forEach(function(data) {
                 var session_id = Ember.uuid();
                 var speaker_id = Ember.uuid();
