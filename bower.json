@@ -6,6 +6,7 @@
     "handlebars": "1.3.0",
     "ember": "1.7.0",
     "ember-loader": "*",
-    "jquery-mockjax": "*"
+    "jquery-mockjax": "*",
+    "bootstrap": "~3.2.0"
   }
 }

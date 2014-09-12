@@ -5,6 +5,9 @@ var concat = require('gulp-concat');
 var gulpFilter = require('gulp-filter');
 var handlebars = require('gulp-ember-handlebars');
 var transpiler = require('gulp-es6-module-transpiler');
+var minifyCss = require('gulp-minify-css');
+var concatCss = require('gulp-concat-css');
+var less = require('gulp-less');
 
 var paths = {
     templates: [
@@ -19,6 +22,7 @@ var paths = {
         'js/vendor/handlebars/handlebars.js',
         'js/vendor/ember/ember.min.js',
         'js/vendor/ember-loader/loader.js',
+        'js/vendor/bootstrap/dist/js/boostrap.min.js',
         'vendor/ember-resolver.js',
         'js/dist/tmpl.min.js',
         'js/app/**/*.js'
@@ -34,6 +38,10 @@ var paths = {
         'js/app/**/*.js',
         'js/tests/**/*.js',
         'vendor/test-loader.js'
+    ],
+    concatCss: [
+        'js/vendor/bootstrap/dist/css/bootstrap.min.css',
+        'css/app/**/*.css'
     ]
 };
 
@@ -43,7 +51,11 @@ var filter = gulpFilter(function(file) {
   return vendor && templates;
 });
 
-gulp.task('default', ['jshint', 'emberhandlebars'], function(){
+gulp.task('default', [
+    'jshint', 
+    'emberhandlebars', 
+    'minify-css'
+], function(){
     return gulp.src(paths.concatDist)
         .pipe(filter)
         .pipe(transpiler({
@@ -83,4 +95,19 @@ gulp.task('jshint', function() {
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(jshint.reporter('fail'));
+});
+
+gulp.task('lessify', function() {
+    return gulp.src('css/app/**/*.less')
+    .pipe(less())
+    .pipe(gulp.dest('css/app'));
+});
+
+gulp.task('minify-css', [
+    'lessify'
+], function() {
+    return gulp.src(paths.concatCss)
+    .pipe(minifyCss({ keepBreaks: true }))
+    .pipe(concatCss('app.min.css'))
+    .pipe(gulp.dest('css/dist/'));
 });

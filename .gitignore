@@ -1,3 +1,5 @@
 node_modules/*
 js/vendor/*
 js/dist/*
+css/dist/*
+css/app/*.css
