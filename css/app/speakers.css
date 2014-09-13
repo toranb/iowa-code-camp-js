@@ -1,0 +1,50 @@
+/*
+Styles specific to 'Speakers' View
+*/
+body {
+  background-color: #d8d8bf;
+}
+h1 {
+  text-align: center;
+  background-color: #b96d00;
+  margin: 3%;
+  padding: 3%;
+}
+div {
+  border-width: 3px;
+  border-color: #6f5230;
+}
+h3 {
+  text-align: center;
+  border-width: 2px;
+  border-color: #6f5230;
+  padding: 3%;
+  margin: 3%;
+  background-color: #7f8400;
+}
+.navbar-icc {
+  text-align: center;
+  background-color: #7f8400;
+  border-color: #d8d8bf;
+  padding: 5%;
+}
+.navbar-icc span {
+  width: 50%;
+  border-color: #d8d8bf;
+}
+.navbar-icc a {
+  color: Black;
+  font-size: 110%;
+  padding: 0 10%;
+}
+.speaker-name {
+  text-align: center;
+}
+.speaker-link a {
+  background-color: #b96d00;
+  border-color: #333333;
+  color: Black;
+}
+.no-speakers-found {
+  text-align: center;
+}
