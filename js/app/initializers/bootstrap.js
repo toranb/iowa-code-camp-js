@@ -29,7 +29,7 @@ var initializer = {
         application.deferReadiness();
         var store = container.lookup("store:main");
         var days = xhr("http://iowacodecamp.com/data/json", "GET").then(function(response) {
-            response.forEach(function(data) {
+            response.d.data.forEach(function(data) {
                 var session_id = Ember.uuid();
                 var speaker_id = Ember.uuid();
                 var session = {id: session_id, name: data.session, level: data.level, time: data.time, room: data.room, desc: data.desc, speaker: speaker_id};
