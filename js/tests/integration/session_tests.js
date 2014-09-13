@@ -4,7 +4,7 @@ module("session integration tests", {
     setup: function() {
         var first = {session: "foo", level: 100, desc: "first one", time: "9:00 AM - 10:15 AM", room: "Room A", speaker: {name: "toran", bio: "javascript ninja"}};
         var last = {session: "bar", level: 300, desc: "last one", time: "10:30 AM - 11:45 AM", room: "Room B", speaker: {name: "nick", bio: "rockstar hacker"}};
-        stubEndpointForHttpRequest("http://iowacodecamp.com/data/json", [first, last]);
+        stubEndpointForHttpRequest("http://iowacodecamp.com/data/json", { d: { data: [first, last] } });
         App = startApp();
         store = lookup("store:main");
     },
