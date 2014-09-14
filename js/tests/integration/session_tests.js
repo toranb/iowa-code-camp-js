@@ -2,8 +2,8 @@ var App, store;
 
 module("session integration tests", {
     setup: function() {
-        var first = {session: "foo", desc: "first one", speaker: {name: "toran"}};
-        var last = {session: "bar", desc: "last one", speaker: {name: "nick"}};
+        var first = {session: "foo", level: 100, desc: "first one", time: "9:00 AM - 10:15 AM", room: "Room A", speaker: {name: "toran", bio: "javascript ninja"}};
+        var last = {session: "bar", level: 300, desc: "last one", time: "10:30 AM - 11:45 AM", room: "Room B", speaker: {name: "nick", bio: "rockstar hacker"}};
         stubEndpointForHttpRequest("http://iowacodecamp.com/data/json", [first, last]);
         App = startApp();
         store = lookup("store:main");
@@ -34,7 +34,7 @@ test("sessions route will show the list of available sessions", function() {
 });
 
 test("session details route will show the session details", function() {
-    expect(5);
+    expect(8);
     visit("/");
     click(".session-link:eq(0) a");
     andThen(function() {
@@ -43,6 +43,12 @@ test("session details route will show the session details", function() {
         equal(session_name.text(), "foo");
         var session_desc = find(".session-desc");
         equal(session_desc.text(), "first one");
+        var session_time = find(".session-time");
+        equal(session_time.text(), "9:00 AM - 10:15 AM");
+        var session_room = find(".session-room");
+        equal(session_room.text(), "Room A");
+        var session_level = find(".session-level");
+        equal(session_level.text(), "100");
         var speakers = find(".session-speaker-row").length;
         equal(speakers, 1);
         var first_speaker_name = find(".session-speaker-name:eq(0)");

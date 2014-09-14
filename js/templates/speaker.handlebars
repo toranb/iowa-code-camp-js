@@ -1,5 +1,6 @@
 <h3>Speaker detail template</h3>
 <span class="speaker-name">{{model.name}}</span>
+<span class="speaker-bio">{{model.bio}}</span>
 <h3>Sessions for this speaker</h3>
 <table class="table">
   <tbody>
@@ -7,7 +8,7 @@
   <tr class="speaker-session-row">
     <td class="speaker-session-name">{{session.name}}</td>
     <td class="speaker-session-link">
-      {{#link-to 'session' session.id class='btn btn-info'}}details{{/link-to}}</td>
+      {{#link-to 'session' session.id class='btn btn-info pull-right'}}details{{/link-to}}</td>
     </td>
   </tr>
   {{else}}

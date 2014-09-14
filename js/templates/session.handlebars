@@ -1,6 +1,9 @@
 <h3>Session detail template</h3>
 <span class="session-name">{{model.name}}</span>
 <span class="session-desc">{{model.desc}}</span>
+<span class="session-time">{{model.time}}</span>
+<span class="session-room">{{model.room}}</span>
+<span class="session-level">{{model.level}}</span>
 <h3>Speakers for this session</h3>
 <table class="table">
   <tbody>
@@ -8,7 +11,7 @@
   <tr class="session-speaker-row">
     <td class="session-speaker-name">{{speaker.name}}</td>
     <td class="session-speaker-link">
-      {{#link-to 'speaker' speaker.id class='btn btn-info'}}details{{/link-to}}</td>
+      {{#link-to 'speaker' speaker.id class='btn btn-info pull-right'}}details{{/link-to}}</td>
     </td>
   </tr>
   {{else}}

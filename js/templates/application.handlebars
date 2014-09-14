@@ -1,1 +1,18 @@
+<div class="navbar-icc">
+  {{#if sessionsActive }}
+    <span class="active">
+  {{else}}
+    <span>
+  {{/if}}
+    {{#link-to 'sessions' }}Sessions{{/link-to}}
+  </span>
+  {{#if speakersActive }}
+    <span class="active">
+  {{else}}
+    <span>
+  {{/if}}
+    {{#link-to 'speakers' }}Speakers{{/link-to}}
+  </span>
+</div>
+<h1>Iowa Code Camp</h1>
 {{outlet}}
