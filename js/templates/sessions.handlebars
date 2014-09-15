@@ -2,10 +2,10 @@
       <tbody>
       {{#each session in controller}}
       <tr class="session-row">
-        <td class="session-name">{{session.name}}</td>
-        <td class="session-link">
-          {{#link-to 'session' session.id class='btn btn-info pull-right'}}details{{/link-to}}</td>
-        </td>
+        <td><span class="session-name hide-overflow">{{session.name}}</span><span class="session-speaker-name">Toran Billups</span></td>
+        {{#link-to "session" session.id tagName="td" class="session-link"}}
+          <a href="#" class='pull-right'><i class="glyphicon glyphicon-chevron-right"></i></a>
+        {{/link-to}}
       </tr>
       {{else}}
       <tr class="no-sessions-found">

@@ -19,6 +19,7 @@ var paths = {
     ],
     concatDist: [
         'js/vendor/jquery/jquery.min.js',
+        'js/vendor/bootstrap/dist/js/bootstrap.min.js',
         'js/vendor/handlebars/handlebars.js',
         'js/vendor/ember/ember.min.js',
         'js/vendor/ember-loader/loader.js',
@@ -29,6 +30,7 @@ var paths = {
     ],
     concatTest: [
         'js/vendor/jquery/jquery.min.js',
+        'js/vendor/bootstrap/dist/js/bootstrap.min.js',
         'js/vendor/handlebars/handlebars.js',
         'js/vendor/ember/ember.js',
         'js/vendor/jquery-mockjax/jquery.mockjax.js',

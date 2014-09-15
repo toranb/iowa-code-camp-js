@@ -27,9 +27,9 @@ test("sessions route will show the list of available sessions", function() {
         var last_name = find(".session-name:eq(1)").text();
         equal(last_name, "bar");
         var first_link = find(".session-link:eq(0) a").attr("href");
-        equal(first_link, "/sessions/%@".fmt(first_session.get("id")));
+        equal(first_link, "#");
         var last_link = find(".session-link:eq(1) a").attr("href");
-        equal(last_link, "/sessions/%@".fmt(last_session.get("id")));
+        equal(last_link, "#");
     });
 });
 

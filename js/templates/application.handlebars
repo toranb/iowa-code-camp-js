@@ -1,18 +1,26 @@
-<div class="navbar-icc">
-  {{#if sessionsActive }}
-    <span class="active">
-  {{else}}
-    <span>
-  {{/if}}
-    {{#link-to 'sessions' }}Sessions{{/link-to}}
-  </span>
-  {{#if speakersActive }}
-    <span class="active">
-  {{else}}
-    <span>
-  {{/if}}
-    {{#link-to 'speakers' }}Speakers{{/link-to}}
-  </span>
+<div class="container">
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Iowa Code Camp</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          {{#link-to 'sessions' tagName="li"}}
+            <a href="#">Sessions</a>
+          {{/link-to}} 
+          {{#link-to 'speakers' tagName="li"}}
+            <a href="#">Speakers</a>
+          {{/link-to}} 
+        </ul>
+      </div>
+    </div>
+  </div>
+  {{outlet}}
 </div>
-<h1>Iowa Code Camp</h1>
-{{outlet}}
