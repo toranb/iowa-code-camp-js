@@ -4,7 +4,8 @@ module("session integration tests", {
     setup: function() {
         var first = {session: "foo", level: 100, desc: "first one", time: "9:00 AM - 10:15 AM", room: "Room A", speaker: {name: "toran", bio: "javascript ninja"}};
         var last = {session: "bar", level: 300, desc: "last one", time: "10:30 AM - 11:45 AM", room: "Room B", speaker: {name: "nick", bio: "rockstar hacker"}};
-        stubEndpointForHttpRequest("http://iowacodecamp.com/data/json", [first, last]);
+        var data = {"d":{"success":true,"message":null,"data":[first, last]}};
+        stubEndpointForHttpRequest("http://iowacodecamp.com/data/json", data);
         App = startApp();
         store = lookup("store:main");
     },
@@ -55,5 +56,18 @@ test("session details route will show the session details", function() {
         equal(first_speaker_name.text(), "toran");
         var first_speaker_link = find(".session-speaker-link:eq(0) a").attr("href");
         equal(first_speaker_link, "/speakers/%@".fmt(first_speaker.get("id")));
+    });
+});
+
+test("sessions will be sorted and grouped by listing time", function() {
+    expect(3);
+    visit("/");
+    andThen(function() {
+        var rows = find(".group-time").length;
+        equal(rows, 2, rows);
+        var first_time = find(".group-time:eq(0)").text();
+        equal(first_time, "9:00 AM - 10:15 AM");
+        var last_time = find(".group-time:eq(1)").text();
+        equal(last_time, "10:30 AM - 11:45 AM");
     });
 });
