@@ -28,16 +28,16 @@ test("speakers route will show the list of available speakers", function() {
         var last_name = find(".speaker-name:eq(1)").text();
         equal(last_name, "nick");
         var first_link = find(".speaker-link:eq(0) a").attr("href");
-        equal(first_link, "/speakers/%@".fmt(first_speaker.get("id")));
+        equal(first_link, "#");
         var last_link = find(".speaker-link:eq(1) a").attr("href");
-        equal(last_link, "/speakers/%@".fmt(last_speaker.get("id")));
+        equal(last_link, "#");
     });
 });
 
 test("speaker details route will show the speaker details", function() {
     expect(5);
     visit("/speakers");
-    click(".speaker-link:eq(0) a");
+    click(".speaker-link :eq(0) a");
     andThen(function() {
         var first_session = store.getEverything("session").toArray()[0];
         var speaker_name = find(".speaker-name");
