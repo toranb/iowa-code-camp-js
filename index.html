@@ -4,10 +4,10 @@
 <title>Iowa Code Camp</title>
 <link rel="stylesheet" href="js/vendor/bootstrap/dist/css/bootstrap.min.css">
 <style>
-.session-link, .speaker-link {
+.session-link, .speaker-link, .session-speaker-link, .speaker-session-link {
   vertical-align: middle !important;
 }
-.session-link a, .speaker-link a {
+.session-link a, .speaker-link a, .session-speaker-link a, .speaker-session-link a {
   color: dimgray!important;
   opacity: 0.5!important;
   text-decoration: none;
@@ -43,6 +43,8 @@ table {
 }
 .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
   border-top: 0;
+}
+.table-border>thead>tr>th, .table-border>tbody>tr>th, .table-border>tfoot>tr>th, .table-border>thead>tr>td, .table-border>tbody>tr>td, .table-border>tfoot>tr>td {
   border-bottom: 1px solid #ff9200!important;
 }
 .session-name {
@@ -55,11 +57,6 @@ table {
   font-weight: bold;
   color: dimgray;
   opacity: 0.9;
-}
-.session-speaker-name {
-  color: dimgray;
-  display: block;
-  opacity: 0.8;
 }
 .hide-overflow {
     overflow:hidden;

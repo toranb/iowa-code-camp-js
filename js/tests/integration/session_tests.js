@@ -55,7 +55,7 @@ test("session details route will show the session details", function() {
         var first_speaker_name = find(".session-speaker-name:eq(0)");
         equal(first_speaker_name.text(), "toran");
         var first_speaker_link = find(".session-speaker-link:eq(0) a").attr("href");
-        equal(first_speaker_link, "/speakers/%@".fmt(first_speaker.get("id")));
+        equal(first_speaker_link, "#");
     });
 });
 
