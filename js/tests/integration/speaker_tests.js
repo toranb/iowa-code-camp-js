@@ -49,6 +49,6 @@ test("speaker details route will show the speaker details", function() {
         var first_session_name = find(".speaker-session-name:eq(0)");
         equal(first_session_name.text(), "foo");
         var first_session_link = find(".speaker-session-link:eq(0) a").attr("href");
-        equal(first_session_link, "/sessions/%@".fmt(first_session.get("id")));
+        equal(first_session_link, "#");
     });
 });

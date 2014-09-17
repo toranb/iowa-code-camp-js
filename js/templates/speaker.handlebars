@@ -7,8 +7,10 @@
   {{#each session in sessions}}
   <tr class="speaker-session-row">
     <td class="speaker-session-name">{{session.name}}</td>
-    <td class="speaker-session-link">
-      {{#link-to 'session' session.id class='btn btn-info pull-right'}}details{{/link-to}}</td>
+    <td>
+      {{#link-to 'session' session.id tagName="td" class="speaker-session-link"}}
+        <a href="#" class="pull-right"><i class="glyphicon glyphicon-chevron-right"></i></a>
+      {{/link-to}}</td>
     </td>
   </tr>
   {{else}}

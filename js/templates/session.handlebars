@@ -10,8 +10,10 @@
   {{#each speaker in speakers}}
   <tr class="session-speaker-row">
     <td class="session-speaker-name">{{speaker.name}}</td>
-    <td class="session-speaker-link">
-      {{#link-to 'speaker' speaker.id class='btn btn-info pull-right'}}details{{/link-to}}</td>
+    <td>
+      {{#link-to 'speaker' speaker.id tagName="td" class="session-speaker-link"}}
+        <a href="#" class="pull-right"><i class="glyphicon glyphicon-chevron-right"></i></a>
+      {{/link-to}}</td>
     </td>
   </tr>
   {{else}}
