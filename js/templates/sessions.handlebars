@@ -3,12 +3,12 @@
       {{#each group in controller.everything}}
         <tr><td class="group-time"><b>{{group.time}}</b></td><td>&nbsp;</td></tr>
         {{#each session in group.sessions}}
-        <tr class="session-row">
+        {{#link-to "session" session.id tagName="tr" class="session-row"}}
           <td><span class="session-name hide-overflow">{{session.name}}</span><span class="session-speaker-name">{{session.speaker_name}}</span></td>
-          {{#link-to "session" session.id tagName="td" class="session-link"}}
+          <td class="session-link">
             <a href="#" class='pull-right'><i class="glyphicon glyphicon-chevron-right"></i></a>
-          {{/link-to}}
-        </tr>
+          </td>
+        {{/link-to}}
         {{/each}}
       {{else}}
       <tr class="no-sessions-found">
