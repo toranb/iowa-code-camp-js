@@ -2,8 +2,8 @@ var App, store;
 
 module("speaker integration tests", {
     setup: function() {
-        var first = {session: "foo", level: 100, desc: "first one", time: "9:00 AM - 10:15 AM", room: "Room A", speaker: {name: "toran", bio: "javascript ninja"}};
-        var last = {session: "bar", level: 300, desc: "last one", time: "10:30 AM - 11:45 AM", room: "Room B", speaker: {name: "nick", bio: "rockstar hacker"}};
+        var first = {session: "foo", level: 100, desc: "first one", time: "9:00 AM - 10:15 AM", room: "Room A", speaker: {name: "toran", bio: "javascript ninja", location: "Burlington, IA"}};
+        var last = {session: "bar", level: 300, desc: "last one", time: "10:30 AM - 11:45 AM", room: "Room B", speaker: {name: "nick", bio: "rockstar hacker", location: "Des Moines, IA"}};
         var data = {"d":{"success":true,"message":null,"data":[first, last]}};
         stubEndpointForHttpRequest("http://iowacodecamp.com/data/json", data);
         App = startApp();
@@ -16,7 +16,7 @@ module("speaker integration tests", {
 });
 
 test("speakers route will show the list of available speakers", function() {
-    expect(5);
+    expect(7);
     visit("/speakers");
     andThen(function() {
         var first_speaker = store.getEverything("speaker").toArray()[0];
@@ -25,8 +25,12 @@ test("speakers route will show the list of available speakers", function() {
         equal(rows, 2, rows);
         var first_name = find(".speaker-name:eq(0)").text();
         equal(first_name, "toran");
+        var first_location = find(".speaker-location:eq(0)").text();
+        equal(first_location, "Burlington, IA");
         var last_name = find(".speaker-name:eq(1)").text();
         equal(last_name, "nick");
+        var last_location = find(".speaker-location:eq(1)").text();
+        equal(last_location, "Des Moines, IA");
         var first_link = find(".speaker-link:eq(0) a").attr("href");
         equal(first_link, "#");
         var last_link = find(".speaker-link:eq(1) a").attr("href");

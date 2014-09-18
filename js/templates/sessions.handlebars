@@ -1,19 +1,19 @@
     <table class="table table-border">
       <tbody>
       {{#each group in controller.everything}}
-        <tr><td class="group-time"><b>{{group.time}}</b></td><td>&nbsp;</td></tr>
+        <tr><td class="group-time"><b>{{group.time}}</b></td></tr>
         {{#each session in group.sessions}}
-        {{#link-to "session" session.id tagName="tr" class="session-row"}}
-          <td><span class="session-name hide-overflow">{{session.name}}</span><span class="session-speaker-name">{{session.speaker_name}}</span></td>
-          <td class="session-link">
-            <a href="#" class='pull-right'><i class="glyphicon glyphicon-chevron-right"></i></a>
-          </td>
-        {{/link-to}}
+          {{#link-to 'session' session.id tagName="tr" class="session-row"}}
+            <td><span class="session-name hide-overflow">{{session.name}}</span><span class="session-speaker-name">{{session.speaker_name}}</span>
+              <span class="session-link pull-right">
+                <a href="#" class="pull-right" {{bind-attr href="view.href"}}><i class="glyphicon glyphicon-chevron-right"></i></a>
+              </span>
+            </td>
+          {{/link-to}}
         {{/each}}
       {{else}}
       <tr class="no-sessions-found">
         <td>no sessions found</td>
-        <td></td>
       </tr>
       {{/each}}
       </tbody>
