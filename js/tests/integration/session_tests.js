@@ -2,8 +2,8 @@ var App, store;
 
 module("session integration tests", {
     setup: function() {
-        var first = {session: "foo", level: 100, desc: "first one", time: "9:00 AM - 10:15 AM", room: "Room A", speaker: {name: "toran", bio: "javascript ninja"}};
-        var last = {session: "bar", level: 300, desc: "last one", time: "10:30 AM - 11:45 AM", room: "Room B", speaker: {name: "nick", bio: "rockstar hacker"}};
+        var first = {session: "foo", level: 100, desc: "first one", time: "9:00 AM - 10:15 AM", room: "Room A", speaker: {name: "toran", bio: "javascript ninja", location: "Burlington, IA"}};
+        var last = {session: "bar", level: 300, desc: "last one", time: "10:30 AM - 11:45 AM", room: "Room B", speaker: {name: "nick", bio: "rockstar hacker", location: "Des Moines, IA"}};
         var data = {"d":{"success":true,"message":null,"data":[first, last]}};
         stubEndpointForHttpRequest("http://iowacodecamp.com/data/json", data);
         App = startApp();

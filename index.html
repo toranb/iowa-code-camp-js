@@ -7,6 +7,12 @@
 .speaker-img {
   display:block;
 }
+.session-name, .session-speaker-name, .speaker-name, .speaker-location {
+  width: 90%!important;
+}
+.session-link, .speaker-link {
+  margin-top: -9px!important;
+}
 .session-link, .speaker-link, .session-speaker-link, .speaker-session-link {
   vertical-align: middle !important;
 }
@@ -50,15 +56,10 @@ table {
 .table-border>thead>tr>th, .table-border>tbody>tr>th, .table-border>tfoot>tr>th, .table-border>thead>tr>td, .table-border>tbody>tr>td, .table-border>tfoot>tr>td {
   border-bottom: 1px solid #ff9200!important;
 }
-.session-name {
+.session-name, .speaker-name {
   font-weight: bold;
   color: dimgray;
   display: block;
-  opacity: 0.9;
-}
-.speaker-name {
-  font-weight: bold;
-  color: dimgray;
   opacity: 0.9;
 }
 .hide-overflow {
@@ -66,6 +67,10 @@ table {
     text-overflow:ellipsis;
     display:block;
     height: 20px;
+}
+td a {
+    display:block;
+    width:100%;
 }
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />

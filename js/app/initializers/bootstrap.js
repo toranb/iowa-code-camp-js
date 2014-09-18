@@ -33,7 +33,7 @@ var initializer = {
                 var session_id = Ember.uuid();
                 var speaker_id = Ember.uuid();
                 var session = {id: session_id, name: data.session, level: data.level, time: data.time, room: data.room, desc: data.desc, speaker: speaker_id};
-                var speaker = {id: speaker_id, name: data.speaker.name, bio: data.speaker.bio, session: session_id, img: data.speaker.img};
+                var speaker = {id: speaker_id, name: data.speaker.name, bio: data.speaker.bio, session: session_id, img: data.speaker.img, location:data.speaker.location};
                 store.push("session", session);
                 store.push("speaker", speaker);
             });
