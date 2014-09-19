@@ -2,8 +2,8 @@ var App, store;
 
 module("speaker integration tests", {
     setup: function() {
-        var first = {session: "foo", level: 100, desc: "first one", time: "9:00 AM - 10:15 AM", room: "Room A", speaker: {name: "toran", bio: "javascript ninja", location: "Burlington, IA"}};
-        var last = {session: "bar", level: 300, desc: "last one", time: "10:30 AM - 11:45 AM", room: "Room B", speaker: {name: "nick", bio: "rockstar hacker", location: "Des Moines, IA"}};
+        var first = {session: "foo", level: 100, desc: "first one", time: "9:00 AM - 10:15 AM", room: "Room A", speaker: {name: "toran", bio: "javascript ninja", location: "Burlington, IA", web: "http://toranbillups.com", img: "ToranBillups.jpg"}};
+        var last = {session: "bar", level: 300, desc: "last one", time: "10:30 AM - 11:45 AM", room: "Room B", speaker: {name: "nick", bio: "rockstar hacker", location: "Des Moines, IA", web: "http://nickstarke.com", img: "NicholasStarke.jpg"}};
         var data = {"d":{"success":true,"message":null,"data":[first, last]}};
         stubEndpointForHttpRequest("http://iowacodecamp.com/data/json", data);
         App = startApp();
@@ -39,7 +39,7 @@ test("speakers route will show the list of available speakers", function() {
 });
 
 test("speaker details route will show the speaker details", function() {
-    expect(5);
+    expect(6);
     visit("/speakers");
     click(".speaker-link :eq(0) a");
     andThen(function() {
@@ -54,5 +54,7 @@ test("speaker details route will show the speaker details", function() {
         equal(first_session_name.text(), "foo");
         var first_session_link = find(".speaker-session-link:eq(0) a").attr("href");
         equal(first_session_link, "#");
+        var speaker_img = find(".speaker-img:eq(0)");
+        equal(speaker_img.attr("src"), "http://iowacodecamp.com/public/images/speakers/ToranBillups.jpg");
     });
 });
