@@ -39,7 +39,7 @@ test("speakers route will show the list of available speakers", function() {
 });
 
 test("speaker details route will show the speaker details", function() {
-    expect(6);
+    expect(9);
     visit("/speakers");
     click(".speaker-link :eq(0) a");
     andThen(function() {
@@ -56,5 +56,10 @@ test("speaker details route will show the speaker details", function() {
         equal(first_session_link, "#");
         var speaker_img = find(".speaker-img:eq(0)");
         equal(speaker_img.attr("src"), "http://iowacodecamp.com/public/images/speakers/ToranBillups.jpg");
+        var speaker_location = find(".speaker-location:eq(0)");
+        equal(speaker_location.text(), "Burlington, IA");
+        var speaker_web = find(".speaker-web a:eq(0)");
+        equal(speaker_web.attr("href").trim(), "http://toranbillups.com");
+        equal(speaker_web.text().trim(), "http://toranbillups.com");
     });
 });
