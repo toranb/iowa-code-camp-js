@@ -25,6 +25,7 @@ var paths = {
         'js/vendor/ember/ember.min.js',
         'js/vendor/ember-loader/loader.js',
         'js/vendor/bootstrap/dist/js/boostrap.min.js',
+        'js/vendor/es5-shim/es5-shim.min.js',
         'vendor/ember-resolver.js',
         'js/dist/tmpl.min.js',
         'js/app/**/*.js'
