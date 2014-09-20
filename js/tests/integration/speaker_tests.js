@@ -44,9 +44,9 @@ test("speaker details route will show the speaker details", function() {
     click(".speaker-link :eq(0) a");
     andThen(function() {
         var first_session = store.getEverything("session").toArray()[0];
-        var speaker_name = find(".speaker-name");
+        var speaker_name = find(".speaker-detail-name");
         equal(speaker_name.text(), "toran");
-        var speaker_bio = find(".speaker-bio");
+        var speaker_bio = find(".speaker-detail-bio");
         equal(speaker_bio.text(), "javascript ninja");
         var sessions = find(".speaker-session-row").length;
         equal(sessions, 1);
@@ -54,11 +54,11 @@ test("speaker details route will show the speaker details", function() {
         equal(first_session_name.text(), "foo");
         var first_session_link = find(".speaker-session-link:eq(0) a").attr("href");
         equal(first_session_link, "#");
-        var speaker_img = find(".speaker-img:eq(0)");
+        var speaker_img = find(".speaker-detail-img:eq(0)");
         equal(speaker_img.attr("src"), "http://iowacodecamp.com/public/images/speakers/ToranBillups.jpg");
-        var speaker_location = find(".speaker-location:eq(0)");
+        var speaker_location = find(".speaker-detail-location:eq(0)");
         equal(speaker_location.text(), "Burlington, IA");
-        var speaker_web = find(".speaker-web a:eq(0)");
+        var speaker_web = find(".speaker-detail-web a:eq(0)");
         equal(speaker_web.attr("href").trim(), "http://toranbillups.com");
         equal(speaker_web.text().trim(), "http://toranbillups.com");
     });

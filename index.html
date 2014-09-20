@@ -4,19 +4,37 @@
 <title>Iowa Code Camp</title>
 <link rel="stylesheet" href="js/vendor/bootstrap/dist/css/bootstrap.min.css">
 <style>
-.speaker-img {
+.speaker-detail-img {
   margin-bottom: 10px;
   display:block;
   float: left;
   margin-right: 10px;
+  clip: rect(0px, 90px, 117px, 0px);
 }
-.speaker-web, .speaker-location {
+
+.speaker-detail-web, .speaker-detail-location, .speaker-detail-name {
   font-weight:bold;
   display: block;
+  margin-bottom: 30px;
+}
+
+.speaker-detail-web a {
+  max-width: 100px;
+  vertical-align: middle;
+}
+.profile-wrap {
+  margin: 25px 0;
+}
+
+.img-wrap, .details-wrap {
+  height: 117px;
+}
+
+.img-wrap {
   float: left;
 }
-.speaker-bio {
-  margin-top: 10px;
+
+.speaker-detail-bio {
   border-top: 1px solid #ff9200;
   padding-top: 10px;
   clear: both;
@@ -71,7 +89,7 @@ table {
 .table-border>thead>tr>th, .table-border>tbody>tr>th, .table-border>tfoot>tr>th, .table-border>thead>tr>td, .table-border>tbody>tr>td, .table-border>tfoot>tr>td {
   border-bottom: 1px solid #ff9200!important;
 }
-.session-name, .speaker-name {
+.session-name, .speaker-name, .speaker-detail-name {
   font-weight: bold;
   color: dimgray;
   display: block;
