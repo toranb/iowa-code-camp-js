@@ -1,10 +1,16 @@
-<img class="speaker-img"{{bind-attr src="imgUrl"}}>
-<span class="speaker-name">{{model.name}}</span>
-<span class="speaker-web">
-  <a {{bind-attr href="web"}}>{{model.web}}</a>
-</span> &middot;
-<span class="speaker-location">{{model.location}}</span>
-<span class="speaker-bio">{{model.bio}}</span>
+<div class="profile-wrap">
+  <div class="img-wrap">
+    <img class="speaker-detail-img"{{bind-attr src="imgUrl"}}>
+  </div>
+  <div class="details-wrap">
+    <span class="speaker-detail-name">{{model.name}}</span>
+    <span class="speaker-detail-location">{{model.location}}</span>
+    <span class="speaker-detail-web">
+      <a {{bind-attr href="web"}}>{{model.web}}</a>
+    </span>
+  </div>
+</div>
+<span class="speaker-detail-bio">{{model.bio}}</span>
 <h3>Sessions for this speaker</h3>
 <table class="table">
   <tbody>
