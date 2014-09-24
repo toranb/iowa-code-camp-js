@@ -2,7 +2,7 @@ document.write('<div id="ember-testing-container"><div id="ember-testing"></div>
 startApp = require('js/helpers/start-app')['default'];
 
 function stubEndpointForHttpRequest(url, json, verb, status) {
-    $.mockjax({
+    $.fauxjax.new({
         type: verb || "GET",
         url: url,
         status: status || 200,
@@ -11,8 +11,7 @@ function stubEndpointForHttpRequest(url, json, verb, status) {
     });
 }
 
-$.mockjaxSettings.logging = false;
-$.mockjaxSettings.responseTime = 0;
+$.fauxjax.settings.responseTime = 0;
 
 require('js/helpers/start-app');
 

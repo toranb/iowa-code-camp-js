@@ -10,7 +10,7 @@ module("session integration tests", {
         store = lookup("store:main");
     },
     teardown: function() {
-        $.mockjaxClear();
+        $.fauxjax.clear();
         Ember.run(App, "destroy");
     }
 });

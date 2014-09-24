@@ -10,7 +10,7 @@ module("speaker integration tests", {
         store = lookup("store:main");
     },
     teardown: function() {
-        $.mockjaxClear();
+        $.fauxjax.clear();
         Ember.run(App, "destroy");
     }
 });
@@ -41,7 +41,7 @@ test("speakers route will show the list of available speakers", function() {
 test("speaker details route will show the speaker details", function() {
     expect(9);
     visit("/speakers");
-    click(".speaker-link :eq(0) a");
+    click(".speaker-link :eq(0)");
     andThen(function() {
         var first_session = store.getEverything("session").toArray()[0];
         var speaker_name = find(".speaker-detail-name");
