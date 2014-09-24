@@ -18,7 +18,7 @@ var paths = {
         'js/tests/**/*.js'
     ],
     concatDist: [
-        'js/vendor/jquery/dist/jquery.min.js',
+        'js/vendor/jquery/dist/jquery.js',
         'vendor/fastclick.js',
         'js/vendor/bootstrap/dist/js/bootstrap.min.js',
         'js/vendor/handlebars/handlebars.js',
@@ -30,7 +30,7 @@ var paths = {
         'js/app/**/*.js'
     ],
     concatTest: [
-        'js/vendor/jquery/dist/jquery.min.js',
+        'js/vendor/jquery/dist/jquery.js',
         'vendor/fastclick.js',
         'js/vendor/fauxjax/dist/fauxjax.min.js',
         'js/vendor/bootstrap/dist/js/bootstrap.min.js',
